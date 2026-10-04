@@ -837,3 +837,28 @@ footer p {
     background: #1c1c1c;
     color: #c9a45c;
 }
+/* ========================================
+   WHATSAPP BUTONU
+======================================== */
+
+.whatsapp-button {
+    display: block;
+    width: fit-content;
+    margin-top: 14px;
+    padding: 11px 16px;
+    background: transparent;
+    border: 1px solid #c9a45c;
+    color: #ffffff !important;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background-color 0.15s ease;
+}
+
+.whatsapp-button:hover {
+    background: #1c1c1c;
+    border-color: #c9a45c;
+    color: #ffffff !important;
+    transform: none;
+}
