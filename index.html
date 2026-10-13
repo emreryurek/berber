@@ -6,7 +6,22 @@
 <meta name="description" content="Erkek berber hizmetleri. Saç kesimi, sakal bakımı, klasik tıraş ve saç &amp; sakal paketi.">
 <title>Gentlemen Barber | Erkek Kuaförü</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ery-kit.css">
 <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+<style>
+  /* ERY Kit renkleri */
+  :root { --k-panel:#181714; --k-field:#11100e; --k-line:#302d27; --k-text:#f5f1e8; --k-muted:#9f998e; --k-accent:#c8a96b; --k-on-accent:#11100e; --k-radius:0; --k-pill:0; }
+  .booking-section { padding: 110px 8%; }
+  .booking-lead { max-width: 560px; margin: -36px 0 40px; color: #9f998e; font-family: Arial, sans-serif; line-height: 1.7; }
+  .hero-status { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-top: 26px; font-family: Arial, sans-serif; }
+  .hero-status [data-k-next] { color: #c8a96b; font-size: 14px; font-weight: bold; }
+  .service-price { display: block; margin-top: 18px; color: #c8a96b; font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; }
+  .service-pick { display: inline-block; margin-top: 14px; color: #f5f1e8; font-family: Arial, sans-serif; font-size: 13px; border-bottom: 1px solid #c8a96b; }
+  .service-pick:hover { color: #c8a96b; }
+  @media (max-width: 600px) { .booking-section { padding: 80px 7%; } .booking-lead { margin: -30px 0 30px; } }
+</style>
+<script src="site.js" defer></script>
+<script src="ery-kit.js" defer></script>
 </head>
 
 <body>
@@ -25,10 +40,11 @@
         <a href="#anasayfa">Ana Sayfa</a>
         <a href="#hizmetler">Hizmetler</a>
         <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#randevu">Randevu</a>
         <a href="#galeri">Galeri</a>
         <a href="#iletisim">İletişim</a>
     </nav>
-    <a href="#iletisim" class="appointment-button">Randevu Al</a>
+    <a href="#randevu" class="appointment-button">Randevu Al</a>
 </header>
 
 <main>
@@ -40,8 +56,12 @@
         <h1>Tarzını<br><span>Yansıt.</span></h1>
         <p class="hero-text">Modern saç kesimi, klasik tıraş ve sakal bakımı. Randevunu telefondan hemen al.</p>
         <div class="hero-actions">
-            <a href="#iletisim" class="gold-button">Randevu Oluştur</a>
+            <a href="#randevu" class="gold-button">Online Randevu Al</a>
             <a href="tel:+905555555555" class="ghost-button">Hemen Ara</a>
+        </div>
+        <div class="hero-status">
+            <p data-k-open style="margin:0">Pzt - Cmt / 09:00 - 20:00</p>
+            <p data-k-next style="margin:0"></p>
         </div>
     </div>
 </section>
@@ -56,23 +76,40 @@
             <span class="service-number">01</span>
             <h3>Saç Kesimi</h3>
             <p>Yüz şeklinize ve tarzınıza uygun modern ya da klasik kesim. Makas ve makine ile.</p>
+            <span class="service-price">400 ₺ · 30 dk</span>
+            <a class="service-pick" href="#randevu" data-k-pick="sac">Randevu al →</a>
         </article>
         <article class="service-card">
             <span class="service-number">02</span>
             <h3>Sakal Bakımı</h3>
             <p>Sakal şekillendirme ve yüz hatlarına uygun düzeltme.</p>
+            <span class="service-price">250 ₺ · 20 dk</span>
+            <a class="service-pick" href="#randevu" data-k-pick="sakal">Randevu al →</a>
         </article>
         <article class="service-card">
             <span class="service-number">03</span>
             <h3>Klasik Tıraş</h3>
             <p>Sıcak havlu ve ustura ile geleneksel tıraş.</p>
+            <span class="service-price">300 ₺ · 30 dk</span>
+            <a class="service-pick" href="#randevu" data-k-pick="tiras">Randevu al →</a>
         </article>
         <article class="service-card">
             <span class="service-number">04</span>
             <h3>Saç &amp; Sakal</h3>
             <p>Kesim ve sakal bakımı tek randevuda, tek seansta.</p>
+            <span class="service-price">600 ₺ · 50 dk</span>
+            <a class="service-pick" href="#randevu" data-k-pick="paket">Randevu al →</a>
         </article>
     </div>
+</section>
+
+<section class="booking-section" id="randevu">
+    <div class="section-heading">
+        <p class="section-label">ONLINE RANDEVU</p>
+        <h2>Sırada Bekleme,<br>Yerini Ayırt.</h2>
+    </div>
+    <p class="booking-lead">Hizmetini, ustanı ve saatini seç. Talebin WhatsApp'tan bize ulaşır, onaylayıp sana dönüş yaparız.</p>
+    <div data-k-booking></div>
 </section>
 
 <section class="about" id="hakkimizda">
@@ -103,7 +140,7 @@
         <p class="section-label">RANDEVUNU PLANLA</p>
         <h2>Yeni Tarzına<br>Hazır mısın?</h2>
     </div>
-    <a href="#iletisim" class="gold-button">Randevu Al</a>
+    <a href="#randevu" class="gold-button">Randevu Al</a>
 </section>
 
 <section class="contact" id="iletisim">
@@ -144,17 +181,17 @@
             <input type="text" name="name" placeholder="Adınız Soyadınız" autocomplete="name" required>
             <input type="tel" name="phone" placeholder="Telefon Numaranız" autocomplete="tel" required>
 
-            <select name="service" required>
-                <option value="">Hizmet Seçiniz</option>
+            <select name="service">
+                <option value="">Konu (isteğe bağlı)</option>
                 <option value="Saç Kesimi">Saç Kesimi</option>
                 <option value="Sakal Bakımı">Sakal Bakımı</option>
                 <option value="Klasik Tıraş">Klasik Tıraş</option>
                 <option value="Saç ve Sakal">Saç &amp; Sakal</option>
             </select>
 
-            <textarea name="message" rows="5" placeholder="Gelmek istediğin gün ve saat"></textarea>
+            <textarea name="message" rows="5" placeholder="Sorun veya mesajın"></textarea>
 
-            <button type="submit" class="gold-button">Randevu Talebi Gönder</button>
+            <button type="submit" class="gold-button">Mesaj Gönder</button>
         </form>
     </div>
 
@@ -177,7 +214,7 @@
 </footer>
 
 <div class="ery-demo">
-    <span>Bu site ERY Studio'nun örnek çalışmasıdır.</span>
+    <span>Bu site ERY Studio'nun örnek çalışmasıdır. Online randevu ve asistan dahil.</span>
     <a href="https://wa.me/905325023600?text=Merhaba%2C%20berber%20%C3%B6rne%C4%9Fini%20g%C3%B6rd%C3%BCm%2C%20bana%20da%20site%20istiyorum." target="_blank" rel="noopener">Size de hazırlayalım</a>
 </div>
 
